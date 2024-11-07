@@ -14,16 +14,25 @@ namespace Assignment_1_4
              * ( if p1.x is more than p2.x , it is to the right ) 
              */
 
-            Point P1 = new Point(153466, 987245);
+            Point P1 = new(153466, 987245);
             Point P2 = new Point(654262, 874536);
 
-            Console.WriteLine( (P1.x < P2.x) ? "P1 is to the left of P2." : "P1 is to the right of P2." );
+            if (P1.x == P2.x) 
+                Console.WriteLine("P1 and P2 are in the same axis.");
+            else
+                Console.WriteLine( (P1.x < P2.x) ? "P1 is to the left of P2." : "P1 is to the right of P2." );
         }
     }
 
-    class Point(int x, int y)
+    public class Point
     {
-        public int x = x;
-        public int y = y;
+        public double x;
+        public double y;
+
+        public Point(double xCoords, double yCoords)
+        {
+            this.x = xCoords;
+            this.y = yCoords;
+        }
     }
 }
